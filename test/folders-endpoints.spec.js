@@ -187,6 +187,7 @@ describe('Folders Endpoints', () => {
                     .insert(testFolders)
                     .into('folders');
             });
+            //console.log('reach hereeeee')
             it('responds with 204 and updates the folder', () => {
                 const idToUpdate = 1;
                 const updatedFolder = {
@@ -196,8 +197,11 @@ describe('Folders Endpoints', () => {
                     ...testFolders[idToUpdate - 1],
                     ...updatedFolder
                 };
+                
+                //console.log('folder id isssss ', expectedFolder.id)
+                //console.log(Object.entries(expectedFolder))
                 return supertest(app)
-                    .patch(`/api/folder/${idToUpdate}`)
+                    .patch(`/api/folders/${idToUpdate}`)
                     .send(updatedFolder)
                     .expect(204)
                     .then(() => {
