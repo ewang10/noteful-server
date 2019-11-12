@@ -1,5 +1,7 @@
+TRUNCATE notes RESTART IDENTITY CASCADE;
+
 INSERT INTO notes
-    (name, folderId, content)
+    (name, folderid, content)
 VALUES
     ('Dogs', 1, 'notes 1'),
     ('Cats', 2, 'notes 2'),
