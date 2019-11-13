@@ -18,7 +18,7 @@ foldersRouter
             .then(folders => {
                 res.json(folders.map(serializeFolders));
             })
-            .catch(err => console.log(err));
+            .catch(next);
     })
     .post(jsonParser, (req, res, next) => {
         const {name} = req.body;
